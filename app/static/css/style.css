@@ -1,0 +1,239 @@
+:root {
+  /* 전체 배경을 연핑크로 */
+  --bg-color: #ffe4f0;
+  --bg-color-form: #ffe4f0;
+
+  /* 기본 글자색을 진한 버건디/브라운 계열로 */
+  --text-color: #3b0015;
+  --text-main: #3b0015;
+
+  /* 폼 패널은 흰 카드 느낌으로 */
+  --panel-bg: #ffffff;
+  --panel-border: #ff9cc5;
+  --accent-color: #ff7fab;
+
+  --font-main: -apple-system, BlinkMacSystemFont, "Pretendard", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  display: flex;
+  flex-direction: column;
+}
+
+/* form 페이지는 배경만 조금 다르게 */
+body.form-page {
+  background-color: var(--bg-color-form);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 헤더 공통 */
+.site-header {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-header__brand {
+  font-weight: 600;
+}
+
+.site-header__nav {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.site-header__nav a {
+  opacity: 0.7;
+}
+
+.site-header__nav a:hover {
+  opacity: 1;
+}
+
+/* 메인 영역 컨테이너 */
+.page-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px 40px;
+}
+
+/* HOME: hero */
+.hero {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.hero__logo {
+  max-width: 480px;
+  width: 80%;
+}
+
+.hero__logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.hero__hint-arrow {
+  font-size: 16px;
+  margin-bottom: -8px;
+}
+
+.hero__hint {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.hero__banner {
+  max-width: 640px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.hero__banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* FORM 페이지: panel */
+.panel {
+  width: 100%;
+  max-width: 720px;
+  background-color: var(--panel-bg);
+  border-radius: 24px;
+  border: 2px solid var(--panel-border);
+  padding: 28px 22px 32px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  color: var(--text-main);
+}
+
+.panel__logo {
+  max-width: 320px;
+  margin: 0 auto 20px;
+}
+
+.panel__logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.panel__eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
+.panel__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.panel__subtitle {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.panel__subtitle span {
+  display: block;
+}
+
+.panel__description {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.panel__cta {
+  margin-top: 4px;
+}
+
+.panel__cta a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-color);
+  background-color: #ffffff;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.panel__cta a:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+/* 푸터 */
+.site-footer {
+  font-size: 11px;
+  text-align: center;
+  padding: 12px 8px 18px;
+  opacity: 0.7;
+}
+
+/* 반응형 포인트 */
+@media (min-width: 768px) {
+  .site-header {
+    padding: 20px 40px;
+  }
+
+  .page-main {
+    padding: 40px 20px 48px;
+  }
+
+  .hero__logo {
+    max-width: 520px;
+  }
+
+  .hero__banner {
+    max-width: 700px;
+  }
+
+  .panel {
+    padding: 36px 32px 40px;
+  }
+
+  .panel__title {
+    font-size: 28px;
+  }
+
+  .panel__subtitle {
+    font-size: 20px;
+  }
+}
